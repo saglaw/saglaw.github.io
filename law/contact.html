@@ -6,7 +6,7 @@
         <title>SAG LAWYERS UK</title>
         <meta name="description" content="SAG Lawyers UK provides expert legal services specializing in corporate law, litigation, family law, and immigration. Our experienced solicitors offer tailored solutions to meet the unique needs of individuals and businesses. Contact us for professional legal advice and representation across the UK.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="shortcut icon" type="image/x-icon" href="img/logo/sag.pngo">
+		<link rel="shortcut icon" type="image/x-icon" href="img/logo/sag.png">
         <!-- Place favicon.ico in the root directory -->
 
 		<!-- CSS here -->
@@ -21,6 +21,8 @@
         <link rel="stylesheet" href="css/default.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/responsive.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <script>
             var isNS = (navigator.appName == "PN") ? 1 : 0;
@@ -136,13 +138,14 @@
 												</ul>
                                             </li>
                                              <li><a href="projects.html">Case Studies</a></li>
-                                            <li class="has-sub"><a href="#">Pages</a>
+                                             <li class="has-sub"><a href="#">More</a>
 												<ul>
                                                     <li><a href="pricing.html">Pricing</a></li>
                                                     <li><a href="team.html">Team</a></li>
                                                     <li><a href="faq.html">Faq</a></li>
                                                     <li><a href="blog.html">Blog</a></li>
                                                     <li><a href="blog-details.html">Blog Details</a></li>
+                                                    <li><a href="career.html">Career</a></li>
                                                 </ul>
 											</li>
                                             <li><a href="contact.html">Contact Us</a></li>
@@ -154,7 +157,7 @@
                               <a href="#" data-toggle="modal" data-target=".popup1"><i class="fal fa-search"></i></a>
                             </div>
                             <div class="col-xl-3 col-lg-3 text-right d-none d-lg-block">
-                              <a href="contact.html" class="top-btn">Make A Appointment</a>
+                              <a href="appointment.html" class="top-btn">Make A Appointment</a>
                             </div>
                           
                             
@@ -284,7 +287,7 @@
                               
                             </div>
                                 
-						<form action="mail.php" method="post" class="contact-form mt-30">
+						<form id="submit-form" action="" method="" class="contact-form mt-30">
 							<div class="row">
                             <div class="col-lg-12">
                                 <div class="contact-field p-relative c-name mb-20">                                    
@@ -294,12 +297,12 @@
 							
 							<div class="col-lg-12">                               
                                 <div class="contact-field p-relative c-subject mb-20">                                   
-                                    <input type="text" id="email" name="email" placeholder="Eamil" required>
+                                    <input type="text" id="email" name="email" placeholder="Email" required>
                                 </div>
                             </div>		
                             <div class="col-lg-12">                               
                                 <div class="contact-field p-relative c-subject mb-20">                                   
-                                    <input type="text" id="phone" name="phone" placeholder="Phone No." required>
+                                    <input type="number" id="phone" name="phone" placeholder="Phone No." required>
                                 </div>
                             </div>	
                           
@@ -315,6 +318,28 @@
                         
                     </form>
                             
+
+                    <script>
+                        $("#submit-form").submit((e)=>{
+                        e.preventDefault()
+                        $.ajax({
+                        url:"https://script.google.com/macros/s/AKfycbzZC1q7SGRP1r4Phy7roY1zBO6colINktTgQEOCSbcWgYe7yyAP3gHBrIr4MoCBOpbYfQ/exec",
+                        data:$("#submit-form").serialize(),
+                        method:"post",
+                        success:function (response){
+                        alert("Your message has been sent. Thank you!")
+                        window.location.reload()
+                        //window.location.href="https://google.com"
+                        },
+                        error:function (err){
+                        alert("Something Error")
+                        
+                        }
+                        })
+                        })
+                        </script>
+
+
                             </div>
                         
 						</div>
