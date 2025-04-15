@@ -38,7 +38,7 @@ a.float:hover {
     -moz-background-clip: padding;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-        background-color: rgb(19 161 137);
+        background-color: #b68c5a;
     width: 60px;
     height: 60px;
     -webkit-animation: zcwmini2 1.5s 0s ease-out infinite;
